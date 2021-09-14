@@ -12,6 +12,10 @@ body {
 table, th, td {
     border:2px solid black;
 }
+th {
+    background-color: blue;
+    color: white;
+}
 h1 {
     color: black;
     text-align: center;
@@ -19,7 +23,7 @@ h1 {
     font-family:"Copperplate", Fantasy;
 }
 p {
-    margin-left:80px;
+    margin-left:40px;
     font-family: verdana;
     font-size: 16px;
     text-align: center;
