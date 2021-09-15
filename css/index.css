@@ -7,7 +7,7 @@ excerpted for educational purposes with credit to the author.
 updated by EF on September 12, 2021 at 3:12 PM
 */
 body {
-    background-color: lightblue;
+    background-color: #69ccf5;
 }
 table, th, td {
     border:2px solid black;
@@ -16,17 +16,36 @@ th {
     background-color: blue;
     color: white;
 }
+td{
+    font-family: verdana;
+    font-size: 14px;
+}
+caption {
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
 h1 {
     color: black;
     text-align: center;
     font-size: 40px;
     font-family:"Copperplate", Fantasy;
 }
-p {
+p.middle {
     margin-left:40px;
     font-family: verdana;
     font-size: 16px;
     text-align: center;
+}
+p.left {
+    font-family: verdana;
+    font-size: 16px;
+    text-align: left;
+    border-style: solid;
+    border-color: blue;
+    border-width: 2px;
+    padding: 10px 10px 10px 10px;
 }
 img.middle{
     display:block;
@@ -34,10 +53,25 @@ img.middle{
     margin-right: auto;
     text-align:center;
 }
-#images{
-    text-align:center;
+img.right{
+    float: right;
+    margin-left: auto;
+    margin-right: auto;
+    text-align:right;
 }
+img.left{
+    float: left;
+    margin-left: 35px;
+    margin-right: auto;
+    text-align:left;
+}
+
 .center_table{
     margin-left: auto;
     margin-right: auto;
+}
+.wrapper{
+    display:grid;
+    grid-template-columns: 60% 30%;
+    grid-gap:1em;
 }
