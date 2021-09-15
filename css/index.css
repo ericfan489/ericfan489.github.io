@@ -26,6 +26,7 @@ caption {
     font-size: 20px;
     font-weight: bold;
 }
+/*h1 used for formatting the header*/
 h1 {
     color: black;
     text-align: center;
@@ -47,6 +48,7 @@ p.left {
     border-width: 2px;
     padding: 10px 10px 10px 10px;
 }
+/*img classes r used to format the image placement on the webpage*/
 img.middle{
     display:block;
     margin-left: auto;
@@ -70,6 +72,7 @@ img.left{
     margin-left: auto;
     margin-right: auto;
 }
+/*wrapper class used to format image and text in grid format*/
 .wrapper{
     display:grid;
     grid-template-columns: 60% 30%;
