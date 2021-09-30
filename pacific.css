@@ -1,0 +1,120 @@
+header, hgroup, nav, footer, figure, figcaption, aside, section, article {
+	display: block;
+}
+body {
+	padding-top:40px;
+	background-image:url("ptrbackground.jpg");
+	background-color: #00569f ;
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+	margin:auto;
+}
+nav{
+	text-align: left;
+	display: inline;
+	max-width: 200px;
+	grid-area: nav;
+	background-color:rgb(132, 205, 230);
+
+}
+nav ul {
+	list-style-image: none;
+	font-size: 1.2em;
+}
+nav a:visited {
+	color: #344873;
+}
+nav a:hover {
+	color: #FFFFFF;
+}
+nav li a{
+	text-transform:capitalize;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight:bold;
+	color:rgb(12, 12, 56);
+}
+nav li{
+	list-style-type:none;
+}
+header {
+	margin-bottom: 0;
+	grid-area:header;
+}
+h1{
+	color: white;
+	padding:10px;
+	border-bottom-width:0px;
+	border-top-width:0px;
+	background-image:url("sunset.jpg");
+	background-repeat: no-repeat;
+	background-position:right;
+	background-color: rgb(12, 12, 56);
+	margin-bottom: 0;
+	margin-top:0;
+}
+h2 {
+	color: #3399CC;
+}
+h1,
+h2 {
+	font-family: Georgia, "Times New Roman", serif;
+}
+#contact {
+	grid-area:contact;
+	font-size: 90%;
+}
+dt {
+	color: #000033;
+}
+footer {
+	font-family: Georgia, "Times New Roman", serif;
+	grid-area:footer;
+	text-align:left;
+	background-color:white;
+	padding:20px;
+}
+#content {
+	padding-left:20px;
+	grid-area:content;
+	background-color: white;
+}
+#content img{
+	display: inline;
+	float:left;
+	padding-right:20px;
+}
+#content p{
+	display: inline;
+}
+#content ul{
+	display:inline;
+}
+
+.resort{
+	color: #3399CC;
+	font-size:18px;
+	font-weight:bold;
+}
+#wrapper{
+	display:grid;
+    grid:gap 0px;
+	margin:auto;
+	width: 80%;
+	height: 80%;
+	min-height:100%;
+	min-width:600px;
+	grid-template-columns: 25% 50% 25%;
+	grid-template-areas:
+	'header header header'
+	'nav content content'
+	'nav content content'
+	'none contact contact'
+	'none footer footer';
+	background-color:rgb(132, 205, 230);
+}
+
+ul{
+	list-style-image: url('marker.gif');
+}
+
