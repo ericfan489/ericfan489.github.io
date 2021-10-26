@@ -6,6 +6,9 @@ function generate_table(){
     var row_min = parseInt(document.getElementById("third").value);
     var row_max = parseInt(document.getElementById("fourth").value);
     
+    if(column_min > 50 || column_min < -50 || column_max > 50 || column_max < -50 || row_min > 50 || row_min < -50 || row_max > 50 || row_max < -50 ){
+        return;
+    }
     var error = document.getElementById("error");
     if (column_min > column_max && row_min > row_max){
         error.innerText = "Switching the max column and min column \n Switching the max row and min row";
