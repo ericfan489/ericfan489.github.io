@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+    <!--Header to display information on table-->
+    <h1>Multiplication Table</h1>
+    <p>Enter in the max and min for the column and rows and a multiplication table will be displayed below.<br>
+    The max for all inputs is 50 and the min is -50. <br>If the min is greater than the max then they will be switched and a message will display saying they were switched.
+    </p>
+    <!--Paragraph to store the error messages-->
+    <p id = "error">
+
+    </p>
+    <!--Div to store and format the form for inputs-->
+    <div id="input">
+        <form id = "input_form" onsubmit="return false">
+            <label for="first">Min Column:</label><br>
+            <input type="number" id = "first" name="first" min="-50" max="50" value="0"><br>
+            <label for="second">Max Column:</label><br>
+            <input type="number" id = "second" name="second" min="-50" max="50" value="0"><br>
+            <label for="third">Min Row:</label><br>
+            <input type="number" id = "third" name="third" min="-50" max="50" value="0"><br>
+            <label for="fourth">Max Row:</label><br>
+            <input type="number" id = "fourth" name="fourth" min="-50" max="50" value="0"><br>
+            <input type="submit" id= "submit"><br>
+        </form>
+    </div>
+
+    <!--Empty div to put the table as output-->
+    <div id = output style="overflow:auto">
+
+    </div>
+
+    <script src="js/reference.js"> </script>
+</body>
+</html>
