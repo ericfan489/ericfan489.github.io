@@ -1,0 +1,175 @@
+ <!DOCTYPE html>
+ <!--
+File: \HW3_form.html
+GUI Assignment 3: Creating a dynamic Multiplication Table
+Eric Fan, UMass Lowell Computer Science, eric_fan@student.uml.edu
+Copyright (c) 2021 by Eric. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by EF on November 19, 2021 at 8:43 PM
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
+    <script>
+        $(document).ready(function(){
+            generate_table();
+            $("#tab-1").innerHtml = $("#output").innerHtml;
+            $("#input_form").validate({
+                messages : {
+                    first:{
+                        number:"<br><p>Please enter a number</p>",
+                        min:"<br><p>Number must be greater than -51</p>",
+                        max:"<br><p>Number must be less than 51</p>",
+                        required:"<br> <p>This field is required</p>"
+                    },
+                    second:{
+                        number:"<br><p>Please enter a number</p>",
+                        min:"<br><p>Number must be greater than -51</p>",
+                        max:"<br><p>Number must be less than 51</p>",
+                        required:"<br> <p>This field is required</p>"
+                    },
+                    third:{
+                        number:"<br><p>Please enter a number</p>",
+                        min:"<br><p>Number must be greater than -51</p>",
+                        max:"<br><p>Number must be less than 51</p>",
+                        required:"<br> <p>This field is required</p>"
+                    },
+                    fourth:{
+                        number:"<br><p>Please enter a number</p>",
+                        min:"<br><p>Number must be greater than -51</p>",
+                        max:"<br><p>Number must be less than 51</p>",
+                        required:"<br> <p>This field is required</p>"
+                    }
+                }
+            });
+            $( "#first_slider" ).slider({
+                range: false,
+                min: -50,
+                max: 50,
+                value: 0,
+                slide: function( x, y ) {
+                        $("#first").val(parseInt(y.value));
+                        generate_table();
+                }
+            });
+            $( "#second_slider" ).slider({
+                range: false,
+                min: -50,
+                max: 50,
+                value: 0,
+                slide: function( x, y ) {
+                        $("#second").val(parseInt(y.value));
+                        generate_table();
+                }
+            });
+            $( "#third_slider" ).slider({
+                range: false,
+                min: -50,
+                max: 50,
+                value: 0,
+                slide: function( x, y ) {
+                        $("#third").val(parseInt(y.value));
+                        generate_table();
+                }
+            });
+            $( "#fourth_slider" ).slider({
+                range: false,
+                min: -50,
+                max: 50,
+                value: 0,
+                slide: function( x, y ) {
+                        $("#fourth").val(parseInt(y.value));
+                        generate_table();
+                }
+            });
+            $("#first").change(function() {
+                var oldVal = $("#first_slider").slider("value");
+                var newVal = parseInt($(this).val());
+                if (!isNaN(newVal) && newVal >= -50 || newVal <= 50) {
+                    $("#first_slider").slider("value", newVal);
+                }
+                $("#input_form").validate();
+                generate_table();
+            });
+            $("#second").change(function() {
+                var oldVal = $("#second_slider").slider("value");
+                var newVal = parseInt($(this).val());
+                if (!isNaN(newVal) && newVal >= -50 || newVal <= 50) {
+                    $("#second_slider").slider("value", newVal);
+                }
+                $("#input_form").validate();
+                generate_table();
+            });
+            $("#third").change(function() {
+                var oldVal = $("#third_slider").slider("value");
+                var newVal = parseInt($(this).val());
+                if (!isNaN(newVal) && newVal >= -50 || newVal <= 50) {
+                    $("#third_slider").slider("value", newVal);
+                }
+                $("#input_form").validate();
+                generate_table();
+            });
+            $("#fourth").change(function() {
+                var oldVal = $("#fourth_slider").slider("value");
+                var newVal = parseInt($(this).val());
+                if (!isNaN(newVal) && newVal >= -50 || newVal <= 50) {
+                    $("#fourth_slider").slider("value", newVal);
+                }
+                $("#input_form").validate();
+                generate_table();
+            });
+        });
+    </script>
+</head>
+<body>
+    <!--Header to display information on table-->
+    <h1>Multiplication Table</h1>
+    <p id ="desc">Enter in the max and min for the column and rows and a multiplication table will be displayed below.<br>
+    The max for all inputs is 50 and the min is -50. <br>If the min is greater than the max then they will be switched and a message will display saying they were switched.
+    <br>You may save up to 30 tabs. After 30 tabs are made when pressing the add tab button an alert will appear notifying you that there are 30 tabs</p>
+    <!--Paragraph to store the error messages-->
+    <p id = "error">
+
+    </p>
+    <!--Script using the validation plugin to verify that all fields are correct-->
+    <!--Div to store and format the form for inputs-->
+    <div id="input">
+        <form id = "input_form" onsubmit="return false">
+            <label for="first">Min Column:</label><br>
+            <input type="number" id = "first" name="first" min="-50" max="50" value="0" required><br>
+            <div id="first_slider"></div>
+            <label for="second">Max Column:</label><br>
+            <input type="number" id = "second" name="second" min="-50" max="50" value="0" required><br>
+            <div id="second_slider"></div>
+            <label for="third">Min Row:</label><br>
+            <input type="number" id = "third" name="third" min="-50" max="50" value="0" required><br>
+            <div id="third_slider"></div>
+            <label for="fourth">Max Row:</label><br>
+            <input type="number" id = "fourth" name="fourth" min="-50" max="50" value="0" required><br>
+            <div id="fourth_slider"></div>
+            <input type="submit" id= "submit" value="Add to tabs"><br>
+            <input type="submit" id= "delete_tabs" value="Delete all tabs"><br>
+        </form>
+    </div>
+
+    <!--Empty div to put the table as output-->
+    <div id ="output" class="scrollable" style="overflow:auto">    </div>
+
+
+    <div class="row">
+        <div id="tabs">
+          <ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/reference.js">
+    </script>
+</body>
+</html>

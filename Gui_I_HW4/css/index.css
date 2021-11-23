@@ -1,0 +1,70 @@
+/*
+File: index.css
+GUI Assignment 3: Creating A Dynamic Table
+Eric Fan, UMass Lowell Computer Science, eric_fan@student.uml.edu
+Copyright (c) 2021 by Eric. All rights reserved.
+*/
+body {
+    background-color: lightskyblue;
+}
+#input_form{
+    padding:15px;
+    border-width: 10px;
+    margin:auto;
+}
+#input{
+    margin:auto;
+    display:block;
+    border-width: 2px;
+    border-style: solid;
+    padding:5px;
+    float:left;
+}
+#output{
+    margin:auto;
+    display:block;
+    border-width: 2px;
+    max-width:400px;
+    max-height:400px;
+    padding:10px;
+    float:left;
+}
+
+thead{
+    position:sticky;
+    top:0;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 5px;
+    min-width:10px;
+}
+#blank{
+    border:0px;
+}
+#error{
+    display:block;
+    color:red;
+    padding:5px;
+    font-size:14px;
+    font-weight:bold;
+    float:none;
+}
+th{
+    color:blue;
+    background-color:white;
+    position:sticky;
+    top:0;
+    left:0;
+}
+input{
+    width:150px;
+    margin: 10px;
+}
+#desc{
+    color:black;
+}
+p{
+    color:red;
+}
