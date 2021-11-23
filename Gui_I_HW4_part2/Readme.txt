@@ -1,6 +1,11 @@
 Eric Fan
-GUI 1 HW 3
-url: https://ericfan489.github.io/GUI_I_HW3/HW3_form.html
+GUI 1 HW 4
+part 1 url: https://ericfan489.github.io/Gui_I_HW4/HW4_form.html
+part 2 url: https://ericfan489.github.io/Gui_I_HW4_part2/HW4_form_2.html
 
-For this assignment I made a dynamic multiplication table that uses the input from the user as the max and min for the columns and rows.
-I put in some error checking for when the inputs are out of range and if the min is greater than the max.
+https://github.com/ericfan489/ericfan489.github.io/tree/main/Gui_I_HW4
+https://github.com/ericfan489/ericfan489.github.io/tree/main/Gui_I_HW4_part2
+
+For this assignment I used jquery for error handling and used the previous assignment. I used jqeury validation for error handling for the first part of the assignment.
+This made is so error messages would be displayed to the screen dynamically if the user did not input correct inputs. For the second part of this assignment I used jqeury UI to implement 
+sliders and tabs.
