@@ -28,49 +28,70 @@ function delete_tabs(){
     tabIndex = 1;
 }
 function add_tab() {  
-        var tabCount = $("#tabs li").length + 1;
+    if($("#input_form").valid() == false){
+        return;
+    }
+    var tabCount = $("#tabs li").length + 1;
       
-        //I decided to set the max as 30 tabs
-        if(tabCount > 30) {
-          alert("Sorry, only 30 tables can be saved at the same time. Please delete one table to save another.");
-          return false;
-        }
+    //I decided to set the max as 30 tabs
+    if(tabCount > 30) {
+        alert("Sorry, only 30 tables can be saved at the same time. Please delete one table to save another.");
+        return false;
+    }
       
-        // This should make the tabs 
-        $( "#tabs" ).tabs();
+    // This should make the tabs 
+    $( "#tabs" ).tabs();
       
-        // -50 to 50 (horizontal beginning to end) by -50 to 50 (vertical beginning to end)
-        var hor_start = parseInt(document.getElementById('first').value);
-        var hor_end = parseInt(document.getElementById('second').value);
-        var vert_start = parseInt(document.getElementById('third').value);
-        var vert_end = parseInt(document.getElementById('fourth').value);
+    // -50 to 50 (horizontal beginning to end) by -50 to 50 (vertical beginning to end)
+    var hor_start = parseInt(document.getElementById('first').value);
+    var hor_end = parseInt(document.getElementById('second').value);
+    var vert_start = parseInt(document.getElementById('third').value);
+    var vert_end = parseInt(document.getElementById('fourth').value);
       
-        // Increment the tab index everytime we create a new one
-        tabIndex++;
+    //Make sure the titles of the tabs are correct
+    if (hor_start > hor_end && vert_start > vert_end){
+        var temp = hor_start;
+        hor_start = hor_end;
+        hor_end = temp;
+
+        temp = vert_start;
+        vert_start = vert_end;
+        vert_end = temp;
+    }else if (vert_start > vert_end){
+        var temp = vert_start;
+        vert_start = vert_end;
+        vert_end = temp;
+    }else if (hor_start > hor_end){
+        var temp = hor_start;
+        hor_start = hor_end;
+        hor_end = temp;
+    }
+    // Increment the tab index everytime we create a new one
+    tabIndex++;
       
-        // Create a temp variable title which will be used as the title for the tab1
-        var title = "<li><a href='#tab-" + tabIndex + "'>" + hor_start +
-                    " to " + hor_end + " by " + vert_start + " to " + vert_end + "</a>" +
-                    "<span class='ui-icon ui-icon-close' role='presentation'></span>" + "</li>";
+    // Create a temp variable title which will be used as the title for the tab1
+    var title = "<li><a href='#tab-" + tabIndex + "'>" + hor_start +
+                " to " + hor_end + " by " + vert_start + " to " + vert_end + "</a>" +
+                "<span class='ui-icon ui-icon-close' role='presentation'></span>" + "</li>";
       
-        // append the title to the list of tab titles
-        $( "#tabs ul" ).append( title );
+    // append the title to the list of tab titles
+    $( "#tabs ul" ).append( title );
       
-        // Add the multiplication table to the tab
-        $( "#tabs" ).append('<div id="tab-' + tabIndex + '"class="scrollable" style="overflow:auto">' + $("#output").html() + '</div>');
+    // Add the multiplication table to the tab
+    $( "#tabs" ).append('<div id="tab-' + tabIndex + '"class="scrollable" style="overflow:auto">' + $("#output").html() + '</div>');
       
-        // Refresh the tabs so the new tab will be visible
-        $( "#tabs" ).tabs("refresh");
-        $( "#tabs" ).tabs("option", "active", -1);
+    // Refresh the tabs so the new tab will be visible
+    $( "#tabs" ).tabs("refresh");
+    $( "#tabs" ).tabs("option", "active", -1);
 
 
-        // Add and x button to each tab
-        // Got this function from https://jqueryui.com/tabs/#manipulation
-        $( "#tabs" ).tabs().on( "click", "span.ui-icon-close", function() {
-            var panelId = $( this ).closest( "li" ).remove().attr( "aria-controls" );
-            $( "#" + panelId ).remove();
-            $( "#tabs" ).tabs().tabs( "refresh" );
-        });
+    // Add and x button to each tab
+    // Got this function from https://jqueryui.com/tabs/#manipulation
+    $( "#tabs" ).tabs().on( "click", "span.ui-icon-close", function() {
+        var panelId = $( this ).closest( "li" ).remove().attr( "aria-controls" );
+        $( "#" + panelId ).remove();
+        $( "#tabs" ).tabs().tabs( "refresh" );
+    });
 }; 
 
 function generate_table(){
