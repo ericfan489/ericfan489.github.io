@@ -1,0 +1,30 @@
+/*
+File: index.css
+GUI Assignment 5: Scrabble
+Eric Fan, UMass Lowell Computer Science, eric_fan@student.uml.edu
+Copyright (c) 2021 by Eric. All rights reserved.
+*/
+body {
+    background-color: lavender;
+}
+#tile_holder{
+    padding:30px;
+    width:600px;
+    height:120px;
+    display:block;
+    left:auto;
+    top:auto;
+    position:absolute;
+}
+
+#scrabble_line{
+    display:block;
+    margin:auto;
+    width:1129px;
+    height:80px;
+
+}
+#reshuffle{
+    display:block;
+
+}

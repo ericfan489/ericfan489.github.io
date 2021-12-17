@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+ <!--
+File: \HW3_form.html
+GUI Assignment 5: Scrabble
+Eric Fan, UMass Lowell Computer Science, eric_fan@student.uml.edu
+Copyright (c) 2021 by Eric. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by EF on December 16, 2021 at 8:23 PM
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
+    <script src="js/reference.js">
+    </script>
+</head>
+<body>
+    <h1>
+        Scrabble
+    </h1>
+    <p>Drag a letter from the rack onto the board</p>
+    <img id="scrabble_line" src="graphics_data/Scrabble_Board_OneLine.png">
+    
+    <div id="droppables">
+    </div>
+    <img id="tile_holder" src="graphics_data/scrabble-tile-holder-406774_640.png" class="ui-droppable">
+
+        <div id="tiles" class="ui-widget-content">
+        </div>
+        <br>
+        <br>
+        <br>
+        <br><br><br><br><br><br>
+    
+    <input type="button" value = "Restart Game" onclick="location = location;">
+</body>
+</html>
